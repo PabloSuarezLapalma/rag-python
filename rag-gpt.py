@@ -7,6 +7,10 @@ from concurrent.futures import ThreadPoolExecutor
 import logging
 from pathlib import Path
 
+ollama_model="mistral"
+file_Name="Rules_en"
+embedding_model="nomic-embed-text"
+
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -65,22 +69,22 @@ def main():
     Context:
     """
     # open file
-    filename = "Reglamentacion"
+    filename = file_Name
     paragraphs = parse_file(f"{filename}.txt")
 
-    embeddings = get_embeddings(filename, "nomic-embed-text", paragraphs)
+    embeddings = get_embeddings(filename, embedding_model, paragraphs)
 
     conversation_history = [
         {"role": "system", "content": SYSTEM_PROMPT}
     ]
 
     while True:
-        prompt = input("What do you want to know? -> ")
+        prompt = input(">>> Qué quieres saber?:  ")
         if not prompt.strip():
             print("Exiting...")
             break
 
-        prompt_embedding = ollama.embeddings(model="nomic-embed-text", prompt=prompt)["embedding"]
+        prompt_embedding = ollama.embeddings(model=embedding_model, prompt=prompt)["embedding"]
 
         most_similar_chunks = find_most_similar(prompt_embedding, embeddings)[:5]
 
@@ -89,7 +93,7 @@ def main():
         conversation_history.append({"role": "system", "content": SYSTEM_PROMPT + context})
 
         response = ollama.chat(
-            model="llama3",
+            model=ollama_model,
             messages=conversation_history,
         )
         response_content = response["message"]["content"]
