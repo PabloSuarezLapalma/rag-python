@@ -7,6 +7,8 @@ from concurrent.futures import ThreadPoolExecutor
 import logging
 from pathlib import Path
 
+#Change for fine-tuning the model
+
 ollama_model="mistral"
 file_Name="Rules_en"
 embedding_model="nomic-embed-text"
@@ -79,7 +81,7 @@ def main():
     ]
 
     while True:
-        prompt = input(">>> Qué quieres saber?:  ")
+        prompt = input(">>> What would you like to know?:  ")
         if not prompt.strip():
             print("Exiting...")
             break
