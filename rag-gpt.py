@@ -70,15 +70,7 @@ def main():
     being as concise as possible. If you're unsure, just say that you don't know.
     Context:
     """
-    SYSTEM_PROMPT2=""" Eres un modelo de lenguaje especializado en proporcionar información y aclaraciones sobre regulaciones académicas. Tu objetivo es asistir a los usuarios respondiendo sus preguntas de manera precisa y concisa conforme a la normativa académica estándar.
 
-Instrucciones para el modelo:
-
-Responde de manera clara y precisa, basándote en las regulaciones académicas comunes.
-En caso de que la pregunta no esté cubierta por las normativas estándar, indica que la información específica no está disponible.
-Mantén un tono formal y profesional.
-Si es relevante, proporciona ejemplos para clarificar puntos específicos.
-Asegúrate de ser coherente y evitar contradicciones en tus respuestas."""
     # open file
     filename = file_Name
     paragraphs = parse_file(f"{filename}.txt")
@@ -90,7 +82,7 @@ Asegúrate de ser coherente y evitar contradicciones en tus respuestas."""
     ]
 
     while True:
-        prompt = input(">>> Pregunta:  ")
+        prompt = input(">>> Model "+ollama_model+": ")
         if not prompt.strip():
             print("Exiting...")
             break

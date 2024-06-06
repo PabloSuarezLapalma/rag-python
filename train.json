@@ -1,0 +1,72 @@
+[
+    {
+        "id": "1",
+        "title": "Consejo Federal de Cultura y Educación",
+        "context": "El Consejo Federal de Cultura y Educación está compuesto por la Asamblea Federal, el Comité Ejecutivo, la Secretaría General y Consejos Consultivos. La Asamblea Federal es la máxima autoridad y está integrada por el Ministro de Educación de la Nación y los ministros de educación de cada provincia y la Ciudad de Buenos Aires.",
+        "question": "¿Quiénes componen la Asamblea Federal del Consejo Federal de Cultura y Educación?",
+        "answers": {
+            "text": [
+                "El Ministro de Educación de la Nación y los ministros de educación de cada provincia y la Ciudad de Buenos Aires"
+            ],
+            "answer_start": [
+                194
+            ]
+        }
+    },
+    {
+        "id": "2",
+        "title": "Consejo Federal de Cultura y Educación",
+        "context": "El Comité Ejecutivo del Consejo Federal de Cultura y Educación está presidido por el Ministro de Educación de la Nación y cuenta con representantes regionales designados por la Asamblea Federal cada dos años.",
+        "question": "¿Quién preside el Comité Ejecutivo del Consejo Federal de Cultura y Educación?",
+        "answers": {
+            "text": [
+                "El Ministro de Educación de la Nación"
+            ],
+            "answer_start": [
+                74
+            ]
+        }
+    },
+    {
+        "id": "3",
+        "title": "Consejo Federal de Cultura y Educación",
+        "context": "La Secretaría General del Consejo Federal de Cultura y Educación se encarga de la ejecución de las actividades, trabajos y estudios que establezcan la Asamblea Federal y el Comité Ejecutivo. El Secretario General es designado por la Asamblea Federal cada dos años.",
+        "question": "¿Quién designa al Secretario General del Consejo Federal de Cultura y Educación?",
+        "answers": {
+            "text": [
+                "La Asamblea Federal"
+            ],
+            "answer_start": [
+                192
+            ]
+        }
+    },
+    {
+        "id": "4",
+        "title": "Consejo Federal de Cultura y Educación",
+        "context": "El Consejo Federal de Cultura y Educación tiene como funciones formular y acordar contenidos básicos comunes, diseños curriculares y métodos de evaluación para los distintos ciclos y niveles de enseñanza.",
+        "question": "¿Cuáles son algunas de las funciones del Consejo Federal de Cultura y Educación?",
+        "answers": {
+            "text": [
+                "formular y acordar contenidos básicos comunes, diseños curriculares y métodos de evaluación para los distintos ciclos y niveles de enseñanza"
+            ],
+            "answer_start": [
+                84
+            ]
+        }
+    },
+    {
+        "id": "5",
+        "title": "Consejo Federal de Cultura y Educación",
+        "context": "Las autoridades de las provincias y la Ciudad de Buenos Aires tienen a su cargo la planificación, organización y administración de los servicios educativos en sus respectivas jurisdicciones.",
+        "question": "¿Quiénes se encargan de la planificación y administración de los servicios educativos en las provincias y la Ciudad de Buenos Aires?",
+        "answers": {
+            "text": [
+                "Las autoridades de las provincias y la Ciudad de Buenos Aires"
+            ],
+            "answer_start": [
+                0
+            ]
+        }
+    }
+]

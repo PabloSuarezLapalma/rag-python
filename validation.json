@@ -1,0 +1,30 @@
+[
+    {
+        "id": "6",
+        "title": "Consejo Federal de Cultura y Educación",
+        "context": "El Consejo Federal de Cultura y Educación coordina y ejecuta programas de investigación y cooperación con universidades y organismos nacionales de educación.",
+        "question": "¿Con quiénes coopera el Consejo Federal de Cultura y Educación en programas de investigación?",
+        "answers": {
+            "text": [
+                "con universidades y organismos nacionales de educación"
+            ],
+            "answer_start": [
+                68
+            ]
+        }
+    },
+    {
+        "id": "7",
+        "title": "Consejo Federal de Cultura y Educación",
+        "context": "El Consejo Federal de Cultura y Educación promueve el uso de los medios estatales y privados de comunicación para la difusión de programas educativos y culturales.",
+        "question": "¿Qué promueve el Consejo Federal de Cultura y Educación respecto a los medios de comunicación?",
+        "answers": {
+            "text": [
+                "el uso de los medios estatales y privados de comunicación para la difusión de programas educativos y culturales"
+            ],
+            "answer_start": [
+                36
+            ]
+        }
+    }
+]
