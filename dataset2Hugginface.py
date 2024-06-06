@@ -66,7 +66,7 @@ HfFolder.save_token(hf_token)
 api = HfApi()
 
 # Nombre del repositorio de dataset en Hugging Face
-repo_name = "P4B10/reglamentacion-epsilon"  # Reemplaza "tu_usuario" con tu nombre de usuario en Hugging Face
+repo_name = "P4B10/reglamentacion-alpha"  # Reemplaza "tu_usuario" con tu nombre de usuario en Hugging Face
 
 # Crear un nuevo repositorio en Hugging Face
 api.create_repo(repo_id=repo_name, repo_type="dataset", private=False)

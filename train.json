@@ -68,5 +68,145 @@
                 0
             ]
         }
+    },
+    {
+        "id": "6",
+        "title": "Convocatorias en el capítulo",
+        "context": "Las convocatorias para la designación por Concurso de Profesores Ordinarios titulares, asociados y adjuntos.",
+        "question": "¿Qué tipo de convocatorias se establecen en este capítulo?",
+        "answers": {
+            "text": [
+                "Las convocatorias para la designación por Concurso de Profesores Ordinarios titulares, asociados y adjuntos."
+            ],
+            "answer_start": [
+                0
+            ]
+        }
+    },
+    {
+        "id": "7",
+        "title": "Núcleos mencionados en el artículo",
+        "context": "No se especifica en este capítulo, pero se hace referencia a diferentes cátedras, áreas, núcleos, asignaturas y disciplinas.",
+        "question": "¿Cuáles son las áreas que integran los núcleos mencionados en el artículo?",
+        "answers": {
+            "text": [
+                "No se especifica en este capítulo, pero se hace referencia a diferentes cátedras, áreas, núcleos, asignaturas y disciplinas."
+            ],
+            "answer_start": [
+                0
+            ]
+        }
+    },
+    {
+        "id": "8",
+        "title": "Disposiciones de las Unidades Académicas",
+        "context": "El Consejo Superior.",
+        "question": "¿Quién debe aprobar las disposiciones dictadas por las Unidades Académicas?",
+        "answers": {
+            "text": [
+                "El Consejo Superior."
+            ],
+            "answer_start": [
+                0
+            ]
+        }
+    },
+    {
+        "id": "9",
+        "title": "Propuesta para la provisión de cargos de profesores",
+        "context": "La propuesta debe especificar las cátedras, áreas, núcleos, asignaturas que integran los núcleos, disciplinas y laboratorio a concursar.",
+        "question": "¿Qué tipo de información debe incluir cada Unidad Académica en su propuesta para la provisión de cargos de profesores?",
+        "answers": {
+            "text": [
+                "La propuesta debe especificar las cátedras, áreas, núcleos, asignaturas que integran los núcleos, disciplinas y laboratorio a concursar."
+            ],
+            "answer_start": [
+                0
+            ]
+        }
+    },
+    {
+        "id": "10",
+        "title": "Categoría en la provisión de cargos de profesores",
+        "context": "La categoría del cargo.",
+        "question": "¿Qué tipo de categoría debe ser especificada en la propuesta para la provisión de cargos de profesores?",
+        "answers": {
+            "text": [
+                "La categoría del cargo."
+            ],
+            "answer_start": [
+                0
+            ]
+        }
+    },
+    {
+        "id": "11",
+        "title": "Plazo de resolución del Consejo Superior",
+        "context": "Treinta (30) días después de recibir la solicitud.",
+        "question": "¿Cuál es el plazo dentro del cual el Consejo Superior debe resolver sobre la solicitud de llamado?",
+        "answers": {
+            "text": [
+                "Treinta (30) días después de recibir la solicitud."
+            ],
+            "answer_start": [
+                0
+            ]
+        }
+    },
+    {
+        "id": "12",
+        "title": "Autoridad de los Consejos Directivos",
+        "context": "Según el texto, los Consejos Directivos tienen la capacidad de emitir resoluciones que permiten a las Unidades Académicas proponer la realización de concursos.",
+        "question": "¿Qué tipo de autoridad tienen los Consejos Directivos en las Unidades Académicas?",
+        "answers": {
+            "text": [
+                "Según el texto, los Consejos Directivos tienen la capacidad de emitir resoluciones que permiten a las Unidades Académicas proponer la realización de concursos."
+            ],
+            "answer_start": [
+                12
+            ]
+        }
+    },
+    {
+        "id": "13",
+        "title": "Concursos propuestos por las Unidades Académicas",
+        "context": "El texto no especifica qué tipo de concursos pueden ser propuestos, solo menciona que pueden ser conjuntos con otras Unidades Académicas de la misma Universidad.",
+        "question": "¿Qué tipo de concursos pueden ser propuestos por las Unidades Académicas?",
+        "answers": {
+            "text": [
+                "El texto no especifica qué tipo de concursos pueden ser propuestos, solo menciona que pueden ser conjuntos con otras Unidades Académicas de la misma Universidad."
+            ],
+            "answer_start": [
+                0
+            ]
+        }
+    },
+    {
+        "id": "14",
+        "title": "Límite o restricción en la cantidad de Unidades Académicas",
+        "context": "No hay información en el texto sobre límites o restricciones para la cantidad de Unidades Académicas que puedan proponer un concurso.",
+        "question": "¿Hay algún límite o restricción para la cantidad de Unidades Académicas que puedan proponer un concurso?",
+        "answers": {
+            "text": [
+                "No hay información en el texto sobre límites o restricciones para la cantidad de Unidades Académicas que puedan proponer un concurso."
+            ],
+            "answer_start": [
+                0
+            ]
+        }
+    },
+    {
+        "id": "15",
+        "title": "Papel del Consejo Superior en la realización de concursos",
+        "context": "Según el texto, el Consejo Superior es el destinatario de las propuestas de los Consejos Directivos y puede aceptar o rechazar la realización del concurso.",
+        "question": "¿Qué papel juega el Consejo Superior en la realización de concursos propuestos por las Unidades Académicas?",
+        "answers": {
+            "text": [
+                "Según el texto, el Consejo Superior es el destinatario de las propuestas de los Consejos Directivos y puede aceptar o rechazar la realización del concurso."
+            ],
+            "answer_start": [
+                12
+            ]
+        }
     }
 ]
