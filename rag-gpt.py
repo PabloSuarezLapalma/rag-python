@@ -9,8 +9,8 @@ from pathlib import Path
 
 #Change for fine-tuning the model
 
-ollama_model="mistral"
-file_Name="Rules_en"
+ollama_model="llama3"
+file_Name="Reglamentacion"
 embedding_model="nomic-embed-text"
 
 # Configure logging
@@ -65,11 +65,20 @@ def find_most_similar(needle, haystack):
     return sorted(zip(similarity_scores, range(len(haystack))), reverse=True)
 
 def main():
-    SYSTEM_PROMPT = """You are a helpful reading assistant who answers questions 
+    SYSTEM_PROMPT= """You are a helpful reading assistant who answers questions 
     based on snippets of text provided in context. Answer only using the context provided, 
     being as concise as possible. If you're unsure, just say that you don't know.
     Context:
     """
+    SYSTEM_PROMPT2=""" Eres un modelo de lenguaje especializado en proporcionar información y aclaraciones sobre regulaciones académicas. Tu objetivo es asistir a los usuarios respondiendo sus preguntas de manera precisa y concisa conforme a la normativa académica estándar.
+
+Instrucciones para el modelo:
+
+Responde de manera clara y precisa, basándote en las regulaciones académicas comunes.
+En caso de que la pregunta no esté cubierta por las normativas estándar, indica que la información específica no está disponible.
+Mantén un tono formal y profesional.
+Si es relevante, proporciona ejemplos para clarificar puntos específicos.
+Asegúrate de ser coherente y evitar contradicciones en tus respuestas."""
     # open file
     filename = file_Name
     paragraphs = parse_file(f"{filename}.txt")
@@ -81,7 +90,7 @@ def main():
     ]
 
     while True:
-        prompt = input(">>> What would you like to know?:  ")
+        prompt = input(">>> Pregunta:  ")
         if not prompt.strip():
             print("Exiting...")
             break
