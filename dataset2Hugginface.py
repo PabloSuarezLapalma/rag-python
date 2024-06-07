@@ -4,6 +4,26 @@ from datasets import Dataset, DatasetDict
 from dotenv import load_dotenv
 from huggingface_hub import HfApi, HfFolder
 
+
+#NOTA: Esta función para transformar el dataset utiliza como dataset base el formato utilizado en SQUAD v1 y v2.
+# Que sigue la siguiente forma (es un array de varios elementos como siguen):
+# {
+#         "id": "1",
+#         "title": "Titulo del documento",
+#         "context": "Contexto del documento",
+#         "question": "Pregunta",
+#         "answers": {
+#             "text": [
+#                 "Respuesta"
+#             ],
+#             "answer_start": [
+#                 0 #nro que indica el inicio de la respuesta
+#             ]
+#         }
+#     }
+
+#Según sea necesario para el dataset disponible se deberá modificar para que los campos correspondan a los datos que se tienen.
+
 def transformar_dataset(data):
     transformado = []
     for item in data:
@@ -55,8 +75,10 @@ dataset_dict = DatasetDict({
 # Cargar las variables de entorno desde el archivo .env
 load_dotenv()
 
-# Obtener el valor de la variable de entorno
+# Estos datos deben ser ingresados por medio de un archivo .env que contenga las variables de entorno aquí citadas
+hf_user= os.getenv('HF_USER')
 hf_token = os.getenv('HF_TOKEN')
+hf_repository= os.getenv('HF_REPOSITORY_NAME')
 
 if hf_token is None:
     raise ValueError("La variable de entorno HF_TOKEN no está establecida.")
@@ -65,8 +87,8 @@ if hf_token is None:
 HfFolder.save_token(hf_token)
 api = HfApi()
 
-# Nombre del repositorio de dataset en Hugging Face
-repo_name = "P4B10/reglamentacion-alpha"  # Reemplaza "tu_usuario" con tu nombre de usuario en Hugging Face
+
+repo_name = hf_user+"/"+hf_repository
 
 # Crear un nuevo repositorio en Hugging Face
 api.create_repo(repo_id=repo_name, repo_type="dataset", private=False)

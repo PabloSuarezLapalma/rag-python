@@ -6,19 +6,17 @@ from numpy.linalg import norm
 from concurrent.futures import ThreadPoolExecutor
 import logging
 from pathlib import Path
-import fitz  # PyMuPDF
 
-ollama_model = "mistral"
-file_Name = "Rules_en"
-embedding_model = "nomic-embed-text"
+ollama_model="llama3"
+file_Name="Reglamentacion"
+embedding_model="nomic-embed-text"
 
-#Non functional with pdfs yet
+# Si desea evitar tener logs puede comentar estas dos líneas
+logging.basicConfig(level=logging.INFO) #
+logger = logging.getLogger(__name__) #
 
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
-
-def parse_txt(filename):
+# open a file and return paragraphs
+def parse_file(filename):
     with open(filename, encoding="utf-8-sig") as f:
         paragraphs = []
         buffer = []
@@ -33,42 +31,17 @@ def parse_txt(filename):
             paragraphs.append(" ".join(buffer))
         return paragraphs
 
-def parse_pdf(filename):
-    doc = fitz.open(filename)
-    paragraphs = []
-    buffer = []
-    for page_num in range(doc.page_count):
-        page = doc.load_page(page_num)
-        text = page.get_text("text")
-        lines = text.split('\n')
-        for line in lines:
-            line = line.strip()
-            if line:
-                buffer.append(line)
-            elif buffer:
-                paragraphs.append(" ".join(buffer))
-                buffer = []
-        if buffer:
-            paragraphs.append(" ".join(buffer))
-            buffer = []
-    return paragraphs
-
-def parse_file(filename):
-    if filename.endswith('.txt'):
-        return parse_txt(filename)
-    elif filename.endswith('.pdf'):
-        return parse_pdf(filename)
-    else:
-        raise ValueError("Unsupported file format. Please use .txt or .pdf files.")
-
 def save_embeddings(filename, embeddings):
+    # create dir if it doesn't exist
     Path("embeddings").mkdir(exist_ok=True)
+    # save embeddings to npy file
     np.save(f"embeddings/{filename}.npy", embeddings)
 
 def load_embeddings(filename):
     filepath = Path(f"embeddings/{filename}.npy")
     if not filepath.exists():
         return None
+    # load embeddings from npy file
     return np.load(filepath, allow_pickle=True).tolist()
 
 def get_embeddings(filename, modelname, chunks):
@@ -81,6 +54,7 @@ def get_embeddings(filename, modelname, chunks):
     save_embeddings(filename, embeddings)
     return embeddings
 
+# find cosine similarity of every chunk to a given embedding
 def find_most_similar(needle, haystack):
     needle_norm = norm(needle)
     similarity_scores = [
@@ -89,14 +63,15 @@ def find_most_similar(needle, haystack):
     return sorted(zip(similarity_scores, range(len(haystack))), reverse=True)
 
 def main():
-    SYSTEM_PROMPT = """You are a helpful reading assistant who answers questions 
+    SYSTEM_PROMPT= """You are a helpful reading assistant who answers questions 
     based on snippets of text provided in context. Answer only using the context provided, 
     being as concise as possible. If you're unsure, just say that you don't know.
     Context:
     """
+
+    # open file
     filename = file_Name
-    file_path = f"{filename}.txt" if Path(f"{filename}.txt").exists() else f"{filename}.pdf"
-    paragraphs = parse_file(file_path)
+    paragraphs = parse_file(f"{filename}.txt")
 
     embeddings = get_embeddings(filename, embedding_model, paragraphs)
 
@@ -105,7 +80,7 @@ def main():
     ]
 
     while True:
-        prompt = input(">>> Qué quieres saber?:  ")
+        prompt = input(">>> Model "+ollama_model+": ")
         if not prompt.strip():
             print("Exiting...")
             break
@@ -126,6 +101,7 @@ def main():
         print("\n\n")
         print(response_content)
 
+        # Add the assistant's response to the conversation history
         conversation_history.append({"role": "assistant", "content": response_content})
 
 if __name__ == "__main__":
