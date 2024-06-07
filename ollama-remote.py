@@ -5,7 +5,7 @@ import logging
 ollama_model = "llama3"
 file = "Reglamentacion.txt"
 prompt = "¿Cuáles son las responsabilidades del Decano?"
-ollama_api_url = 'http://10.10.16.110:11434'  # URL del servidor remoto
+ollama_api_url = 'http://localhost:11434'  # Cambiar por la URL del servidor remoto
 
 # Log Set-Up
 logging.basicConfig(level=logging.INFO)
