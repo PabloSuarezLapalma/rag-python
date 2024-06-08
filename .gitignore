@@ -1,4 +1,4 @@
 .env
 train_transformado.json
 validation_transformado.json
-/.venv/
+/venv/
