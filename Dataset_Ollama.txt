@@ -1,0 +1,20 @@
+    Pregunta: ¿Qué tipo de convocatorias se establecen en este capítulo?
+    Respuesta: Las convocatorias para la designación por Concurso de Profesores Ordinarios titulares, asociados y adjuntos.
+    Pregunta: ¿Cuáles son las áreas que integran los núcleos mencionados en el artículo?
+    Respuesta: No se especifica en este capítulo, pero se hace referencia a diferentes cátedras, áreas, núcleos, asignaturas y disciplinas.
+    Pregunta: ¿Quién debe aprobar las disposiciones dictadas por las Unidades Académicas?
+    Respuesta: El Consejo Superior.
+    Pregunta: ¿Qué tipo de información debe incluir cada Unidad Académica en su propuesta para la provisión de cargos de profesores?
+    Respuesta: La propuesta debe especificar las cátedras, áreas, núcleos, asignaturas que integran los núcleos, disciplinas y laboratorio a concursar.
+    Pregunta: ¿Qué tipo de categoría debe ser especificada en la propuesta para la provisión de cargos de profesores?
+    Respuesta: La categoría del cargo.
+    Pregunta: ¿Cuál es el plazo dentro del cual el Consejo Superior debe resolver sobre la solicitud de llamado?
+    Respuesta: Treinta (30) días después de recibir la solicitud.
+    Pregunta: ¿Qué tipo de autoridad tienen los Consejos Directivos en las Unidades Académicas?
+    Respuesta: Según el texto, los Consejos Directivos tienen la capacidad de emitir resoluciones que permiten a las Unidades Académicas proponer la realización de concursos.
+    Pregunta: ¿Qué tipo de concursos pueden ser propuestos por las Unidades Académicas?
+    Respuesta: El texto no especifica qué tipo de concursos pueden ser propuestos, solo menciona que pueden ser conjuntos con otras Unidades Académicas de la misma Universidad.
+    Pregunta: ¿Hay algún límite o restricción para la cantidad de Unidades Académicas que puedan proponer un concurso?
+    Respuesta: No hay información en el texto sobre límites o restricciones para la cantidad de Unidades Académicas que puedan proponer un concurso.
+    Pregunta: ¿Qué papel juega el Consejo Superior en la realización de concursos propuestos por las Unidades Académicas?
+    Respuesta: Según el texto, el Consejo Superior es el destinatario de las propuestas de los Consejos Directivos y puede aceptar o rechazar la realización del concurso.

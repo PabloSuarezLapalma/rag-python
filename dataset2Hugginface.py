@@ -24,6 +24,40 @@ from huggingface_hub import HfApi, HfFolder
 
 #Según sea necesario para el dataset disponible se deberá modificar para que los campos correspondan a los datos que se tienen.
 
+#Carga de los datos desde un archivo en formato Pregunta-Respuesta obtenido como respuesta de Ollama desde la PC del GIBD
+def transformar_dataset2(lineas):
+    transformado = []
+    
+    # Verificar si el número de líneas es par
+    if len(lineas) % 2 != 0:
+        raise ValueError("El archivo no tiene un número par de líneas. Cada pregunta debe tener una respuesta correspondiente.")
+    
+    # Asumiendo que el formato del archivo es alternado: Pregunta, Respuesta, Pregunta, Respuesta...
+    for i in range(0, len(lineas), 2):
+        try:
+            pregunta_linea = lineas[i].strip()
+            respuesta_linea = lineas[i + 1].strip()
+            
+            # Remover los prefijos 'Pregunta: ' y 'Respuesta: '
+            if not pregunta_linea.startswith("Pregunta: ") or not respuesta_linea.startswith("Respuesta: "):
+                raise ValueError(f"Formato incorrecto en las líneas {i+1} y {i+2}.")
+            
+            pregunta = pregunta_linea.replace("Pregunta: ", "")
+            respuesta = respuesta_linea.replace("Respuesta: ", "")
+            
+            transformado.append({
+                "conversations": [
+                    {"from": "human", "value": pregunta},
+                    {"from": "gpt", "value": respuesta}
+                ]
+            })
+        except IndexError:
+            raise IndexError(f"Error al acceder a las líneas {i} y {i+1}. Verifique que el archivo tenga un número par de líneas y el formato correcto.")
+    
+    return transformado
+
+### Cargar los datos desde los archivos en formato SQuAD
+
 def transformar_dataset(data):
     transformado = []
     for item in data:
@@ -42,9 +76,17 @@ with open("train.json", "r", encoding="utf-8") as f:
 with open("validation.json", "r", encoding="utf-8") as f:
     validation_data = json.load(f)
 
+with open("Dataset_Ollama.txt", 'r', encoding='utf-8') as archivo:
+    lineas = archivo.readlines()
+        
+
 # Transformar los datasets
 train_data_transformado = transformar_dataset(train_data)
+#train_data_transformado = transformar_dataset2(lineas)
+
 validation_data_transformado = transformar_dataset(validation_data)
+#validation_data_transformado = transformar_dataset2(lineas)
+
 
 # Guardar los datasets transformados a archivos JSON
 with open("train_transformado.json", "w", encoding="utf-8") as f:
