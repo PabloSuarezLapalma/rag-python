@@ -63,7 +63,7 @@ def find_most_similar(needle, haystack):
     return sorted(zip(similarity_scores, range(len(haystack))), reverse=True)
 
 def main():
-    SYSTEM_PROMPT= """You are a helpful reading assistant who answers questions 
+    SYSTEM_PROMPT = """You are a helpful reading assistant who answers questions 
     based on snippets of text provided in context. Answer only using the context provided, 
     being as concise as possible. If you're unsure, just say that you don't know.
     Context:
@@ -80,7 +80,7 @@ def main():
     ]
 
     while True:
-        prompt = input(">>> Model "+ollama_model+": ")
+        prompt = input(">>> Model " + ollama_model + ": ")
         if not prompt.strip():
             print("Exiting...")
             break
@@ -96,12 +96,15 @@ def main():
         response = ollama.chat(
             model=ollama_model,
             messages=conversation_history,
+            stream=True  # Enable streaming
         )
-        response_content = response["message"]["content"]
+
         print("\n\n")
-        print(response_content)
+        for chunk in response:
+            print(chunk["message"]["content"], end='', flush=True)
 
         # Add the assistant's response to the conversation history
+        response_content = ''.join(chunk["message"]["content"] for chunk in response)
         conversation_history.append({"role": "assistant", "content": response_content})
 
 if __name__ == "__main__":
