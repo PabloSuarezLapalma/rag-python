@@ -25,6 +25,7 @@ from huggingface_hub import HfApi, HfFolder
 #Según sea necesario para el dataset disponible se deberá modificar para que los campos correspondan a los datos que se tienen.
 
 #Carga de los datos desde un archivo en formato Pregunta-Respuesta obtenido como respuesta de Ollama desde la PC del GIBD
+
 def transformar_dataset2(lineas):
     transformado = []
     
