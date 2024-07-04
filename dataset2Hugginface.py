@@ -76,16 +76,16 @@ with open("train.json", "r", encoding="utf-8") as f:
 with open("validation.json", "r", encoding="utf-8") as f:
     validation_data = json.load(f)
 
-with open("Dataset_Ollama.txt", 'r', encoding='utf-8') as archivo:
+with open("PreguntasRespuestasGPT4o.txt", 'r', encoding='utf-8') as archivo:
     lineas = archivo.readlines()
         
 
 # Transformar los datasets
-train_data_transformado = transformar_dataset(train_data)
-#train_data_transformado = transformar_dataset2(lineas)
+#train_data_transformado = transformar_dataset(train_data)
+train_data_transformado = transformar_dataset2(lineas)
 
-validation_data_transformado = transformar_dataset(validation_data)
-#validation_data_transformado = transformar_dataset2(lineas)
+#validation_data_transformado = transformar_dataset(validation_data)
+validation_data_transformado = transformar_dataset2(lineas)
 
 
 # Guardar los datasets transformados a archivos JSON
