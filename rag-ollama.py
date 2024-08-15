@@ -1,15 +1,13 @@
 import ollama
-import os
-import json
 import numpy as np
 from numpy.linalg import norm
 from concurrent.futures import ThreadPoolExecutor
 import logging
 from pathlib import Path
 
-ollama_model="llama3"
+ollama_model="llama3.1"
 file_Name="Reglamentacion"
-embedding_model="nomic-embed-text"
+embedding_model="bge-m3"
 
 # Si desea evitar tener logs puede comentar estas dos líneas
 logging.basicConfig(level=logging.INFO) #
@@ -63,10 +61,10 @@ def find_most_similar(needle, haystack):
     return sorted(zip(similarity_scores, range(len(haystack))), reverse=True)
 
 def main():
-    SYSTEM_PROMPT = """You are a helpful reading assistant who answers questions 
-    based on snippets of text provided in context. Answer only using the context provided, 
-    being as concise as possible. If you're unsure, just say that you don't know.
-    Context:
+    SYSTEM_PROMPT = """Eres un útil asistente de lectura que responde a preguntas 
+    basándose en fragmentos de texto proporcionados en contexto. Responde sólo utilizando el contexto proporcionado, 
+    siendo lo más conciso posible. Si no estás seguro, di que no lo sabes.
+    Contexto:
     """
 
     # open file
