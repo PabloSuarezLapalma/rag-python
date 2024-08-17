@@ -5,7 +5,7 @@ from concurrent.futures import ThreadPoolExecutor
 import logging
 from pathlib import Path
 
-ollama_model="llama3.1"
+ollama_model='gemma2'
 file_Name="Reglamentacion"
 embedding_model="bge-m3"
 
