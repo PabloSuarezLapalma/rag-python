@@ -52,11 +52,11 @@ def get_embeddings(filename, modelname, chunks):
     save_embeddings(filename, embeddings)
     return embeddings
 
-# find cosine similarity of every chunk to a given embedding
+# find cosine similarity of every chunk to a given embedding --- Revisar para que sea dist coseno (1-cos)
 def find_most_similar(needle, haystack):
     needle_norm = norm(needle)
     similarity_scores = [
-        np.dot(needle, item) / (needle_norm * norm(item)) for item in haystack
+        1-(np.dot(needle, item) / (needle_norm * norm(item))) for item in haystack
     ]
     return sorted(zip(similarity_scores, range(len(haystack))), reverse=True)
 
